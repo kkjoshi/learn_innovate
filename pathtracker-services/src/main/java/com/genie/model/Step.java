@@ -12,6 +12,9 @@ public class Step {
     private String description;
     private long stepId;
     private String createdAt;
+    private String journey;
+    private Path toNext;
+    private boolean isEnd;
    // private List<Path> fromPaths = new LinkedList();
    // private List<Path> toPaths = new LinkedList();
 
@@ -52,6 +55,31 @@ public class Step {
 
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
+    }
+
+
+    public String getJourney() {
+        return journey;
+    }
+
+    public void setJourney(String journey) {
+        this.journey = journey;
+    }
+
+    public Path getToNext() {
+        return toNext;
+    }
+
+    public void setToNext(Path toNext) {
+        this.toNext = toNext;
+    }
+
+    public boolean isEnd() {
+        return isEnd;
+    }
+
+    public void setEnd(boolean end) {
+        isEnd = end;
     }
 
 //    public List<Path> getFromPaths() {

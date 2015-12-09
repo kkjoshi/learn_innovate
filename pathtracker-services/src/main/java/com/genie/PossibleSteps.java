@@ -1,5 +1,6 @@
 package com.genie;
 
+import com.genie.model.Journey;
 import com.genie.model.Step;
 import com.genie.repository.StepResource;
 
@@ -18,9 +19,19 @@ public class PossibleSteps {
     @Path("create")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Step> createDefault() {
-        res.createDefaultSteps();
+        res.createJourneys();
         List<Step> result = res.findAllSteps();
         return result;
+    }
+
+    @POST
+    @Path("mark")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Journey markStep(Step step) {
+        //res.createDefaultSteps();
+        return res.markStep(step);
+        //return result;
     }
 
 
@@ -31,13 +42,14 @@ public class PossibleSteps {
         res.cleanDefaultGraph();
     }
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("all")
-    public List<Step> getAllSteps() {
-        List<Step> result = res.findNextPossibleSteps();
-        return result;
-    }
+//    @GET
+//    @Produces(MediaType.APPLICATION_JSON)
+//    @Path("all")
+//    public List<Step> getAllSteps() {
+////        List<Step> result = res.findNextPossibleSteps();
+//        List<Step> result = res.findAllPossibleSteps_raghu();
+//        return result;
+//    }
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     @Path("allastext")

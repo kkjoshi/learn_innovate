@@ -1,27 +1,25 @@
 package com.genie.model;
 
-import java.time.Duration;
-
 /**
  * Created by joshika on 12/6/2015.
  */
 public class Path {
-    private Duration timeTaken = Duration.ofSeconds(0);
+    private int timeTaken;
     private String name = "";
     private Step from;
     private Step to;
-    public Path(Step from, Step to, Duration duration, String name){
+    public Path(Step from, Step to, int duration, String name){
         this.setFrom(from);
         this.setTo(to);
         this.setTimeTaken(duration);
         this.name = name;//rom.getStepId()+"to"+to.getStepId();
     }
 
-    public Duration getTimeTaken() {
+    public int getTimeTaken() {
         return timeTaken;
     }
 
-    public void setTimeTaken(Duration timeTaken) {
+    public void setTimeTaken(int timeTaken) {
         this.timeTaken = timeTaken;
     }
 
