@@ -1,8 +1,17 @@
 import java.util.*;
+
+import com.thinkaurelius.titan.core.PropertyKey;
+import com.thinkaurelius.titan.core.TitanFactory;
+import com.thinkaurelius.titan.core.TitanGraph;
+import com.thinkaurelius.titan.core.schema.TitanManagement;
+import com.tinkerpop.blueprints.Edge;
+import com.tinkerpop.blueprints.Vertex;
+import org.joda.time.*;
 /**
  * Created by joshika on 9/30/2014.
  */
 public class CollectionTester {
+
 
     public static void list()
     {
@@ -58,6 +67,13 @@ public class CollectionTester {
     }
 
     public static void main(String[] args) {
+
+        CollectionTester ct = new CollectionTester();
+
+        DateTime d1 = new DateTime();
+        System.out.println(System.getProperty("user.timezone"));
+        System.out.println(d1.toDateTimeISO().toString());
+
         tryCollection();
         System.out.println("Print list");
         list();
